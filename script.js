@@ -35,9 +35,20 @@
       </svg>`
     );
 
-  // Pick a fresh cute cat each time (cataas.com = "cat as a service")
+  // Nossos bichinhos — uma foto aleatória a cada confirmação
+  const PETS = [
+    "images/pet-1.jpeg",
+    "images/pet-2.jpeg",
+    "images/pet-3.jpeg",
+    "images/pet-4.jpeg",
+    "images/pet-5.jpeg",
+    "images/pet-6.jpeg",
+    "images/pet-7.jpeg",
+    "images/pet-8.jpeg",
+  ];
+
   function freshCatUrl() {
-    return "https://cataas.com/cat/cute?width=400&height=400&_=" + Date.now();
+    return PETS[Math.floor(Math.random() * PETS.length)];
   }
 
   function showError(msg) {
