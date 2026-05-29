@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Olimpíadas da Carla 🏅</title>
+  <meta name="description" content="Confirme sua presença nas Olimpíadas da Carla!" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏅</text></svg>" />
+</head>
+<body>
+  <div class="bg-decor" aria-hidden="true"></div>
+
+  <main class="card">
+    <header class="hero">
+      <div class="rings" aria-hidden="true">
+        <span class="ring ring-blue"></span>
+        <span class="ring ring-yellow"></span>
+        <span class="ring ring-black"></span>
+        <span class="ring ring-green"></span>
+        <span class="ring ring-red"></span>
+      </div>
+      <h1>Olimpíadas da <span class="highlight">Carla</span></h1>
+      <p class="subtitle">🏆 Dia 01 de Junho de 2026! 🏆</p>
+    </header>
+
+    <!-- SIGN-UP STATE -->
+    <section id="signup" class="panel">
+      <p class="prompt">Garanta seu lugar no pódio. Confirme sua presença:</p>
+      <form id="rsvp-form" autocomplete="off">
+        <label class="field">
+          <span class="field-label">Seu nome</span>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            placeholder="Ex.: Ana Clara"
+            maxlength="80"
+            required
+            autocomplete="name"
+          />
+        </label>
+
+        <!-- Honeypot: hidden from humans, bots tend to fill it -->
+        <div class="hp" aria-hidden="true">
+          <label>Não preencha este campo
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+          </label>
+        </div>
+
+        <button id="submit-btn" type="submit" class="btn">
+          <span class="btn-label">Confirmar presença</span>
+          <span class="btn-spinner" aria-hidden="true"></span>
+        </button>
+        <p id="error" class="error" role="alert" hidden></p>
+      </form>
+    </section>
+
+    <!-- CONFIRMED STATE -->
+    <section id="confirmed" class="panel" hidden>
+      <div class="confetti-burst" aria-hidden="true">🎉</div>
+      <h2 class="confirmed-title">Presença confirmada! 🥇</h2>
+      <p id="confirmed-msg" class="confirmed-msg"></p>
+      <figure class="cat">
+        <img id="cat-img" alt="Um gatinho fofo comemorando com você" />
+        <figcaption>Seu mascote oficial das Olimpíadas da Carla 🐾</figcaption>
+      </figure>
+      <button id="reset-btn" type="button" class="btn btn-ghost">Confirmar outra pessoa</button>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>Confirme por sua conta e risco</p>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
